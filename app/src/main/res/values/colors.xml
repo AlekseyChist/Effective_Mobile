@@ -25,6 +25,7 @@
     <color name="special_dark_green">#015905</color>
     <color name="special_green">#4CB24E</color>
     <color name="basic_grey_2">#313234</color>
+    <color name="card_background">#222325</color>
 
 
 </resources>

@@ -1,16 +1,44 @@
 package com.aleksei.chistiakov.effective_mobile
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.aleksei.chistiakov.effective_mobile.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
+            when(item.itemId) {
+                R.id.navigation_search -> {
+                    // Переход к экрану поиска
+                    true
+                }
+                R.id.navigation_favorites -> {
+                    // Переход к экрану избранного
+                    true
+                }
+                R.id.navigation_responses -> {
+                    // Переход к экрану откликов
+                    true
+                }
+                R.id.navigation_messages -> {
+                    // Переход к экрану сообщений
+                    true
+                }
+                R.id.navigation_profile -> {
+                    // Переход к экрану профиля
+                    true
+                }
+                else -> false
+            }
         }
+
+        // Установка начального экрана
+        binding.bottomNavigation.selectedItemId = R.id.navigation_search
     }
+}

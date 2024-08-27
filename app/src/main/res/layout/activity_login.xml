@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Вход в личный кабинет"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvJobSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        android:layout_marginTop="232dp"
+        android:layout_marginHorizontal="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="@color/card_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Поиск работы"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:startIconTint="@color/grey_3"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/grey_3"
+                android:textColorHint="@color/grey_3"
+                app:boxStrokeColor="@color/grey_3"
+                app:hintTextColor="@color/grey_3">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Электронная почта или телефон"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/white"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnContinue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Продолжить"
+                    android:textAllCaps="false"
+                    style="@style/Button.FieldBlue.Base"
+                    app:backgroundTint="@color/special_blue"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Войти с паролем"
+                    android:textAllCaps="false"
+                    android:layout_marginStart="8dp"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:textColor="@color/special_blue"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvEmployeeSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/cvJobSearch"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="@color/card_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Поиск сотрудников"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Размещение вакансий и доступ к базе резюме"
+                android:textColor="@color/grey_3"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSearchEmployees"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Я ищу сотрудников"
+                android:textAllCaps="false"
+                android:layout_marginTop="16dp"
+                style="@style/Button.FieldGreen.Base"
+                app:backgroundTint="@color/special_green"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
